@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html lang="en" class="no-js ie6" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html> <![endif]-->
+<!--[if IE 7]> <html lang="en" class="no-js ie7" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html <![endif]-->
+<!--[if IE 8]> <html lang="en" class="no-js ie8" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html <![endif]-->
+<!--[if IE 9]> <html lang="en" class="no-js ie9" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <% include ./partials/head %>
+</head>
+<body>
+    <header class="main-header">
+    </header>
+    <div class="main-container">
+            <div class="flight-filter">
+                <% include ./partials/tabs %>
+                <% include ./partials/slider %>
+            </div>
+            <div class="flights-block">
+                <div class="flight-search-details">
+                    <span class="fl-heading">
+                        <h2>All Flights</h2>
+                    </span>
+                    <div class="flight-depart-block hide">
+                        <label class="depart-label ">Depart :</label>
+                        <span class="depart-selected"></span>
+                    </div>
+                    <div class="flight-arrival-block hide">
+                        <label class="arrival-label ">Return : </label>
+                        <span class="arrival-selected"></span>
+                    </div>
+                </div>
+                <div class="container">
+                    <ul class="flight-results">
+                        <% for (var i=0; i < flights.length; i++) { %>
+                            <% var data = flights[i]%>
+                            <% include ./client-side/flight-result%>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <% include ./partials/footer %>
+    </footer>
+</body>
+</html>
