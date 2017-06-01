@@ -2,11 +2,11 @@
 require.config({
     baseUrl: "../../../",
     paths: {
+        'backbone' : '../js/libs/vendor/backbone/backbone',
         'jquery'        : 'assets/js/libs/vendor/jquery/dist/jquery',
         'underscore': 'assets/js/libs/vendor/underscore/underscore',
         'jquery-ui' : 'assets/js/libs/vendor/jquery-ui/jquery-ui',
         'config' : 'assets/js/app/config',
-        'template' : 'test/unit/client/template',
         'session' : 'assets/js/app/session',
         'mainFile' : 'assets/js/app/main',
         'mocha'         : 'node_modules/mocha/mocha',
@@ -20,7 +20,11 @@ require.config({
         },
         "underscore": {
             exports: "_"
-        }
+        },
+        'backbone': {
+            deps: ['underscore'],
+            exports: 'Backbone'
+        },
     },
     urlArgs: 'bust=' + (new Date()).getTime()
 });
