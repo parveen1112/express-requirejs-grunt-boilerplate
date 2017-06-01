@@ -3,8 +3,9 @@
 assets/js/libs/vendor
 node_modules
 bower_modules
-logs
+logs/*
 
+!logs/.gitignore
 
 #ignore thumbnails created by windows
 Thumbs.db
